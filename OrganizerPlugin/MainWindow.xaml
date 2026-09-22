@@ -1,0 +1,145 @@
+﻿<Window x:Class="OrganizerPlugin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Модульный настольный органайзер"
+        Width="1000"
+        Height="650"
+        WindowStartupLocation="CenterScreen"
+        Background="#F2F2F2">
+
+  <Grid Margin="20">
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <!-- Заголовок -->
+    <TextBlock Grid.Row="0"
+               Text="Модульный настольный органайзер"
+               FontSize="22"
+               FontWeight="Bold"
+               Margin="0,0,0,15"/>
+
+    <!-- Основная область -->
+    <Grid Grid.Row="1">
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="300"/>
+        <ColumnDefinition Width="20"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <!-- Параметры -->
+      <Border Grid.Column="0"
+              Background="White"
+              BorderBrush="#CCCCCC"
+              BorderThickness="1"
+              Padding="20">
+
+        <StackPanel>
+
+          <TextBlock Text="Параметры"
+                     FontSize="18"
+                     FontWeight="Bold"
+                     Margin="0,0,0,15"/>
+
+          <TextBlock Text="Длина L, мм"/>
+          <TextBox Text="300"
+                   Margin="0,4,0,12"/>
+
+          <TextBlock Text="Ширина W, мм"/>
+          <TextBox Text="160"
+                   Margin="0,4,0,12"/>
+
+          <TextBlock Text="Высота H, мм"/>
+          <TextBox Text="100"
+                   Margin="0,4,0,12"/>
+
+          <TextBlock Text="Толщина T, мм"/>
+          <TextBox Text="5"
+                   Margin="0,4,0,12"/>
+
+          <TextBlock Text="Количество секций N"/>
+          <TextBox Text="4"
+                   Margin="0,4,0,12"/>
+
+          <TextBlock Text="Ширина секции S, мм"/>
+          <TextBox Text="68,75"
+                   Margin="0,4,0,20"/>
+
+          <Border Background="#F3F3F3"
+                  BorderBrush="#DDDDDD"
+                  BorderThickness="1"
+                  Padding="10">
+
+            <StackPanel>
+
+              <TextBlock Text="Условие:"
+                         FontWeight="Bold"/>
+
+              <TextBlock Text="L ≥ N · S + (N + 1) · T"
+                         Margin="0,5,0,0"/>
+
+            </StackPanel>
+
+          </Border>
+
+          <StackPanel Orientation="Horizontal"
+                      HorizontalAlignment="Right"
+                      Margin="0,20,0,0">
+
+            <Button Content="Сбросить"
+                    Width="90"
+                    Height="32"
+                    Margin="0,0,10,0"/>
+
+            <Button Content="Построить"
+                    Width="90"
+                    Height="32"/>
+
+          </StackPanel>
+
+        </StackPanel>
+
+      </Border>
+
+      <!-- Чертёж -->
+      <Border Grid.Column="2"
+              Background="White"
+              BorderBrush="#CCCCCC"
+              BorderThickness="1"
+              Padding="15">
+
+        <Grid>
+
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+
+          <TextBlock Text="Чертёж модели"
+                     FontSize="18"
+                     FontWeight="Bold"
+                     Margin="0,0,0,10"/>
+
+          <Image Grid.Row="1"
+                 Source="/Images/organizer_drawing.png"
+                 Stretch="Uniform"/>
+
+        </Grid>
+
+      </Border>
+
+    </Grid>
+
+    <!-- Статус -->
+    <TextBlock Grid.Row="2"
+               Text="Параметры заданы корректно"
+               Foreground="Green"
+               Margin="0,12,0,0"/>
+
+  </Grid>
+
+</Window>
